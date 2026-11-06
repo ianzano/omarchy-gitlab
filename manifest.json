@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "ianzano.pipelines",
+  "name": "GitLab Pipelines",
+  "version": "1.4.0",
+  "author": "ianzano",
+  "license": "MIT",
+  "description": "A single GitLab-style pipeline list across all your member projects.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "GitLab Pipelines",
+    "category": "Development",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "hostname": "gitlab.com",
+      "refreshIntervalSec": 60
+    },
+    "schema": [
+      {
+        "key": "hostname",
+        "type": "string",
+        "label": "GitLab hostname",
+        "defaultValue": "gitlab.com"
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh while open (seconds, minimum 60, 0 disables)",
+        "min": 0,
+        "max": 3600,
+        "defaultValue": 60
+      }
+    ]
+  }
+}
